@@ -158,7 +158,7 @@ $$/      $$/ $$$$$$/    $$/    $$/   $$/       $$/   $$/  $$$$$$/  $$/      $$/ 
 `
 )
 
-func chorusBig() {
+func chorusBig1() {
 	time.Sleep(time.Millisecond * 210)
 	fmt.Printf("%v", system1)
 	time.Sleep(time.Millisecond * 839)

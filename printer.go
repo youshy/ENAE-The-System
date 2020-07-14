@@ -10,10 +10,15 @@ import (
 func printer(done chan bool) {
 	intro()
 	verse1()
-	chorusBig()
-	chorusBig()
+	chorusBig1()
+	chorusBig1()
 	overAndOver()
-	chorusBig()
+	chorusBig1()
+	verse2()
+	chorusBig1()
+	chorusBig1()
+	overAndOver()
+	chorusBig1()
 	<-done
 }
 
