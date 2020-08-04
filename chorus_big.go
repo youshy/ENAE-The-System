@@ -196,3 +196,22 @@ func chorusBig1() {
 	time.Sleep(time.Millisecond * 1259)
 	cleanDisplay()
 }
+
+func chorusSmall1() {
+	time.Sleep(time.Millisecond * 210)
+	fmt.Printf("%v", system1)
+	time.Sleep(time.Millisecond * 839)
+	cleanDisplay()
+	fmt.Printf("%v", wants1)
+	time.Sleep(time.Millisecond * 210)
+	fmt.Printf("%v", to1)
+	time.Sleep(time.Millisecond * 210)
+	cleanDisplay()
+	fmt.Printf("%v", keep1)
+	time.Sleep(time.Millisecond * 210)
+	fmt.Printf("%v", you1)
+	time.Sleep(time.Millisecond * 420)
+	fmt.Printf("%v", low1)
+	time.Sleep(time.Millisecond * 420)
+	cleanDisplay()
+}

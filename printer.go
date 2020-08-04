@@ -8,17 +8,26 @@ import (
 // 4 bars takes 1678ms
 
 func printer(done chan bool) {
+	// intro
 	intro()
+	// verse 1
 	verse1()
+	// chorus 1
 	chorusBig1()
 	chorusBig1()
 	overAndOver()
 	chorusBig1()
+	// verse 2
 	verse2()
+	// chorus 2 - ends faster and starts loading bar
 	chorusBig1()
 	chorusBig1()
 	overAndOver()
-	chorusBig1()
+	chorusSmall1()
+	loading()
+	// solo
+
+	// chorus 3 - can't feel, can see...
 	<-done
 }
 
