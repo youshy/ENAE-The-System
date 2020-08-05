@@ -8,6 +8,7 @@ import (
 var (
 	transmission string = "Intercepting transmission\n"
 	downloading  string = "Downloading:\n"
+	message      string = "This solo has been improvised from start to finish. It was take number 2 or so and we liked it so much, that we have banned Artur from redoing it. So, most likely, it will be different each time! For the nerds - that is Artur's heavily modded Fender Jazzmaster USA into Earthquaker Devices Tentacle into GodCityInstruments Baracus into Ampeg V4 into ultra-oversized Zilla 212 with V30 and Neodimium Creamback."
 )
 
 func loading() {
@@ -92,14 +93,53 @@ func solo() {
 	noteRest(8)
 	printNoteInBinary("A", 210)
 	printNoteInBinary("G", 210)
-	printNoteInBinary("F", 105)
+	printNoteInBinary("E", 105)
 	printNoteInBinary("G", 105)
-	printNoteInBinary("F", 105)
+	printNoteInBinary("E", 105)
 	printNoteInBinary("D", 105)
-	printNoteInBinary("F", 210)
+	printNoteInBinary("E", 210)
 	noteRest(4)
 	cleanDisplay()
 	// 4th bar
+	printNoteInBinary("F", 105)
+	printNoteInBinary("D", 105)
+	printNoteInBinary("C", 105)
+	printNoteInBinary("F", 105)
+	printNoteInBinary("C", 105)
+	printNoteInBinary("A", 105)
+	printNoteInBinary("C", 105)
+	printNoteInBinary("A", 105)
+	printNoteInBinary("G#", 105)
+	printNoteInBinary("A", 105)
+	printNoteInBinary("G#", 105)
+	printNoteInBinary("G", 105)
+	printNoteInBinary("G#", 105)
+	printNoteInBinary("G", 105)
+	printNoteInBinary("F", 105)
+	printNoteInBinary("G", 105)
+
+	printNoteInBinary("F", 105)
+	printNoteInBinary("D", 105)
+	printNoteInBinary("F", 105)
+	printNoteInBinary("D", 105)
+	printNoteInBinary("C", 105)
+	printNoteInBinary("D", 105)
+	printNoteInBinary("C", 105)
+	printNoteInBinary("A", 105)
+	printNoteInBinary("G#", 105)
+	printNoteInBinary("G", 105)
+	printNoteInBinary("F", 105)
+	printNoteInBinary("D", 105)
+	printNoteInBinary("C", 105)
+	printNoteInBinary("D", 105)
+	printNoteInBinary("F", 105)
+	printNoteInBinary("G", 105)
+	cleanDisplay()
+	// TOOD: figure out how to print uneven message
+	printMessage(message, 1678) // represent as milliseconds?
+	noteRest(1)
+	cleanDisplay()
+	fmt.Println("last chorus")
 }
 
 // As it goes by divisions
@@ -132,7 +172,7 @@ func printNoteInBinary(note string, speed int) {
 	for _, c := range note {
 		toBinary += fmt.Sprintf("%b ", c)
 	}
-	freq := speed / len(toBinary)
+	freq := (float64(speed) / float64(len(toBinary))) // to microseconds
 	for _, b := range toBinary {
 		fmt.Printf("%c", b)
 		time.Sleep(time.Millisecond * time.Duration(freq))
