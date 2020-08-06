@@ -136,8 +136,9 @@ func solo() {
 	printNoteInBinary("G", 105)
 	cleanDisplay()
 	// TOOD: figure out how to print uneven message
-	printMessage(message, 1678) // represent as milliseconds?
-	noteRest(1)
+	printInMicroseconds(message, 1678) // represent as milliseconds?
+	noteRest(2)
+	noteRest(4)
 	cleanDisplay()
 	fmt.Println("last chorus")
 }
@@ -176,6 +177,20 @@ func printNoteInBinary(note string, speed int) {
 	for _, b := range toBinary {
 		fmt.Printf("%c", b)
 		time.Sleep(time.Millisecond * time.Duration(freq))
+	}
+	fmt.Println()
+}
+
+func printInMicroseconds(s string, spd int) {
+	speed := spd * 1000
+	var toBinary string
+	for _, c := range s {
+		toBinary += fmt.Sprintf("%b ", c)
+	}
+	freq := (float64(speed) / float64(len(toBinary))) // to microseconds
+	for _, b := range toBinary {
+		fmt.Printf("%c", b)
+		time.Sleep(time.Microsecond * time.Duration(freq))
 	}
 	fmt.Println()
 }
