@@ -11,13 +11,13 @@ var (
 	message      string = "This solo has been improvised from start to finish. It was take number 2 or so and we liked it so much, that we have banned Artur from redoing it. So, most likely, it will be different each time! For the nerds - that is Artur's heavily modded Fender Jazzmaster USA into Earthquaker Devices Tentacle into GodCityInstruments Baracus into Ampeg V4 into ultra-oversized Zilla 212 with V30 and Neodimium Creamback."
 )
 
-func loading() {
+func solo() {
 	printString(transmission, 52)
 	printString(downloading, 52)
 	totalTime := 2518 - 52 - 52
 	progressBar(100, totalTime)
 	cleanDisplay()
-	solo()
+	guitarSolo()
 }
 
 func progressBar(length, totalTime int) {
@@ -30,7 +30,7 @@ func progressBar(length, totalTime int) {
 	fmt.Printf("]")
 }
 
-func solo() {
+func guitarSolo() {
 	// 1st bar
 	printNoteInBinary("D", 1678)
 	printNoteInBinary("F", 1678)
@@ -135,12 +135,10 @@ func solo() {
 	printNoteInBinary("F", 105)
 	printNoteInBinary("G", 105)
 	cleanDisplay()
-	// TOOD: figure out how to print uneven message
-	printInMicroseconds(message, 1678) // represent as milliseconds?
+	printInMicroseconds(message, 1678)
 	noteRest(2)
 	noteRest(4)
 	cleanDisplay()
-	fmt.Println("last chorus")
 }
 
 // As it goes by divisions

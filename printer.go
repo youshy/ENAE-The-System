@@ -7,7 +7,14 @@ import (
 
 // 4 bars takes 1678ms
 
+type Sized struct {
+	width  int
+	height int
+}
+
 func printer(done chan bool) {
+	s := Sized{}
+	s.width, s.height = checkTerminalSize()
 	// intro
 	intro()
 	// verse 1
@@ -24,10 +31,10 @@ func printer(done chan bool) {
 	chorusBig1()
 	overAndOver()
 	chorusSmall1()
-	loading()
 	// solo
-
+	solo()
 	// chorus 3 - can't feel, can see...
+	s.lastChorus()
 	<-done
 }
 
