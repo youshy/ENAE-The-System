@@ -195,6 +195,7 @@ func chorusBig1() {
 	fmt.Printf("%v", togo1)
 	time.Sleep(time.Millisecond * 1259)
 	cleanDisplay()
+	noteRest(8)
 }
 
 func chorusSmall1() {
