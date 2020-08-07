@@ -2,31 +2,20 @@ package main
 
 import "fmt"
 
+var (
+	pain string = "Can't feel your pain"
+	face string = "But I can see your face"
+)
+
 func (s *Sized) lastChorus() {
-	noteRest(quaternote)
-	s.printCenter("Can't feel your pain")
-	noteRest(fullnote)
-	s.printCenter("But I can see your face")
-	noteRest(fullnote + fullnote + halfnote + quaternote)
-	cleanDisplay()
-	noteRest(quaternote)
-	s.printCenter("Can't feel your pain")
-	noteRest(fullnote)
-	s.printCenter("But I can see your face")
-	noteRest(fullnote + fullnote + halfnote + quaternote)
-	cleanDisplay()
-	noteRest(quaternote)
-	s.printCenter("Can't feel your pain")
-	noteRest(fullnote)
-	s.printCenter("But I can see your face")
-	noteRest(fullnote + fullnote + halfnote + quaternote)
-	cleanDisplay()
-	noteRest(quaternote)
-	s.printCenter("Can't feel your pain")
-	noteRest(fullnote)
-	s.printCenter("But I can see your face")
-	noteRest(fullnote + fullnote + halfnote + quaternote)
-	cleanDisplay()
+	for i := 0; i < 4; i++ {
+		noteRest(quaternote)
+		s.printCenter(pain)
+		noteRest(fullnote)
+		s.printCenter(face)
+		noteRest(fullnote + fullnote + halfnote + quaternote)
+		cleanDisplay()
+	}
 }
 
 func (s *Sized) printCenter(str string) {
