@@ -51,12 +51,18 @@ func verse2() {
 	printFrame(frame42, sixteenthnote)
 	printFrame(frame43, sixteenthnote)
 	printFrame(frame44, sixteenthnote)
+	colourText(yellow, false)
 	printFrame(frame45, sixteenthnote)
+	colourText(yellow, true)
 	printFrame(frame46, sixteenthnote)
+	colourText(red, false)
 	printFrame(frame47, sixteenthnote)
+	colourText(red, true)
 	printFrame(frame48, eightnote)
 	printFrame(frame49, eightnote)
+	colourText(magenta, true)
 	printFrame(frame50, eightnote)
+	resetColourChanges()
 	printFrame(frame51, eightnote)
 }
 

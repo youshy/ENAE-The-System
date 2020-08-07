@@ -16,6 +16,7 @@ func (s *Sized) solo() {
 }
 
 func (s *Sized) guitarSolo() {
+	colourText(green, false)
 	// 1st bar
 	s.printNoteInBinary("D", fullnote)
 	s.printNoteInBinary("F", fullnote)
@@ -120,7 +121,9 @@ func (s *Sized) guitarSolo() {
 	s.printNoteInBinary("F", sixteenthnote)
 	s.printNoteInBinary("G", sixteenthnote)
 	cleanDisplay()
+	colourText(green, true)
 	printBinaryInMicroseconds(message, fullnote)
+	resetColourChanges()
 	noteRest(halfnote)
 	noteRest(quaternote)
 	cleanDisplay()
