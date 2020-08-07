@@ -3,7 +3,10 @@ package main
 import (
 	"fmt"
 	"math"
+	"strings"
 )
+
+// There is an extra quaternote from the solo section here!
 
 var banners = map[int]string{
 	0:  "::######::::::###:::::##::: ##::####::########:::::########::########::########::##:::::::",
@@ -62,10 +65,23 @@ func (s *Sized) generateLine(char string) string {
 	return str
 }
 
+func (s *Sized) generateDisplay(char string) {
+	var strArr []string
+	for i := 0; i < s.height; i++ {
+		str := s.generateLine(char)
+		strArr = append(strArr, str)
+	}
+	temp := strings.Join(strArr[:], "\n")
+	printInMicroseconds(temp, eightnote)
+}
+
 func (s *Sized) lastChorus() {
 	cleanDisplay()
+	s.generateDisplay(":")
 	maxHeight := (s.height - 32) / 2
-	var iter int
+	var (
+		iter int
+	)
 	for j := 0; j < s.height; j++ {
 		fmt.Println(s.generateLine(":"))
 	}
@@ -73,7 +89,12 @@ func (s *Sized) lastChorus() {
 	for i := 0; i < len(banners); i++ {
 		moveCursor(maxHeight+iter, 0)
 		fmt.Println(s.formatLine(banners[i]))
-		noteRest(sixteenthnote)
+		if i == (len(banners)-1)/2 {
+			noteRest(eightnote)
+			iter++
+			continue
+		}
+		noteRest(thirtysecondnote)
 		iter++
 	}
 	noteRest(eightnote)
