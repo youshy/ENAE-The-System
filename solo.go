@@ -166,7 +166,6 @@ func (s *Sized) guitarSolo() {
 	colourText(blue, false)
 	printBinaryInMicroseconds(message, fullnote)
 	resetColourChanges()
-	noteRest(halfnote)
-	noteRest(quaternote)
+	noteRest(eightnote)
 	cleanDisplay()
 }

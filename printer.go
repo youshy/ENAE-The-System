@@ -12,11 +12,13 @@ import (
 
 var (
 	// notes
-	fullnote      int = 1678
-	halfnote      int = 839
-	quaternote    int = 420
-	eightnote     int = 210
-	sixteenthnote int = 105
+	fullnote         int = 1678
+	halfnote         int = 839
+	quaternote       int = 420
+	eightnote        int = 210
+	sixteenthnote    int = 105
+	thirtysecondnote int = 52
+	sixtyfourthnote  int = 26
 )
 
 type Sized struct {
