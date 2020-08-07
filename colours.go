@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 const (
+	// basic colours
 	black = iota
 	red
 	green
@@ -23,6 +24,10 @@ func colourText(colour int, bright bool) {
 	} else {
 		fmt.Printf("\x1b[3%vm", colour)
 	}
+}
+
+func colourTextRGB(red, green, blue int) {
+	fmt.Printf("\x1b[38;2;%v;%v;%vm", red, green, blue)
 }
 
 func whiteBackgroundBlackText() {
