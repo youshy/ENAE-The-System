@@ -27,26 +27,26 @@ func verse1() {
 	printInMicroseconds(verse1_1_2, quaternote)          // 1/1
 	printInMicroseconds(verse1_1_3, fullnote)            // 4/1
 	printInMicroseconds(verse1_1_4, halfnote)            // 2/1
-	noteRest(1)                                          // 4/1
-	noteRest(2)                                          // 2/1
+	noteRest(fullnote)                                   // 4/1
+	noteRest(halfnote)                                   // 2/1
 	printInMicroseconds(verse1_2_1, halfnote+quaternote) // 3/1
 	printInMicroseconds(verse1_2_2, quaternote)          // 1/1
 	printInMicroseconds(verse1_2_3, halfnote+quaternote) // 3/3
 	printInMicroseconds(verse1_2_4, halfnote+quaternote) // 3/3
-	noteRest(1)                                          // 4/1
+	noteRest(fullnote)                                   // 4/1
 	cleanDisplay()
-	noteRest(2)                                          // 2/1
+	noteRest(halfnote)                                   // 2/1
 	printInMicroseconds(verse1_3_1, halfnote+quaternote) // 3/1
 	printInMicroseconds(verse1_3_2, quaternote)          // 1/1
 	printInMicroseconds(verse1_3_3, halfnote)            // 2/1
 	printInMicroseconds(verse1_3_4, fullnote)            // 4/1
-	noteRest(1)                                          // 4/1
-	noteRest(2)                                          // 2/1
+	noteRest(fullnote)                                   // 4/1
+	noteRest(halfnote)                                   // 2/1
 	printInMicroseconds(verse1_4_1, halfnote)            // 2/1
 	printInMicroseconds(verse1_4_2, halfnote)            // 2/1
 	printInMicroseconds(verse1_4_3, halfnote+quaternote) // 3/1
 	printInMicroseconds(verse1_4_4, halfnote+quaternote) // 3/1
-	noteRest(1)                                          // 4/1
+	noteRest(fullnote)                                   // 4/1
 	cleanDisplay()
-	noteRest(2) // 2/1
+	noteRest(halfnote) // 2/1
 }

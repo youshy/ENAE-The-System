@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 var (
@@ -31,7 +30,7 @@ var (
  \__\___/ 
 `
 	keep1 string = `
- __    __  ________  ________  _______  
+  __    __  ________  ________  _______  
  |  \  /  \|        \|        \|       \ 
  | $$ /  $$| $$$$$$$$| $$$$$$$$| $$$$$$$\
  | $$/  $$ | $$__    | $$__    | $$__/ $$
@@ -53,7 +52,7 @@ var (
      \$$      \$$$$$$   \$$$$$$ 
 `
 	low1 string = `
- __        ______   __       __ 
+  __        ______   __       __ 
  |  \      /      \ |  \  _  |  \
  | $$     |  $$$$$$\| $$ / \ | $$
  | $$     | $$  | $$| $$/  $\| $$
@@ -115,7 +114,7 @@ $$$$$$$$\ $$$$$$$$\ $$ |  $$ |   \$  /   $$$$$$$$\
  | $$_____ | $$_____ | $$  | $$   \$$ $$  | $$_____           | $$    | $$__/ $$| $$__/ $$
  | $$     \| $$     \| $$  | $$    \$$$   | $$     \          | $$     \$$    $$ \$$    $$
   \$$$$$$$$ \$$$$$$$$ \$$   \$$     \$     \$$$$$$$$           \$$      \$$$$$$   \$$$$$$ 
- __       __  ______  ________  __    __ 
+  __       __  ______  ________  __    __ 
  |  \  _  |  \|      \|        \|  \  |  \
  | $$ / \ | $$ \$$$$$$ \$$$$$$$$| $$  | $$
  | $$/  $\| $$  | $$     | $$   | $$__| $$
@@ -136,7 +135,7 @@ $$$$$$$$\ $$$$$$$$\ $$ |  $$ |   \$  /   $$$$$$$$\
  $$ |_____ $$ |_____ $$ |  $$ |  $$ $$/   $$ |_____           $$ |   $$ \__$$ |$$ \__$$ |
  $$       |$$       |$$ |  $$ |   $$$/    $$       |          $$ |   $$    $$/ $$    $$/ 
  $$$$$$$$/ $$$$$$$$/ $$/   $$/     $/     $$$$$$$$/           $$/     $$$$$$/   $$$$$$/  
-  __       __  ______  ________  __    __        __    __   ______   __       __  __    __  ________  _______   ________ 
+ __       __  ______  ________  __    __        __    __   ______   __       __  __    __  ________  _______   ________ 
 /  |  _  /  |/      |/        |/  |  /  |      /  \  /  | /      \ /  |  _  /  |/  |  /  |/        |/       \ /        |
 $$ | / \ $$ |$$$$$$/ $$$$$$$$/ $$ |  $$ |      $$  \ $$ |/$$$$$$  |$$ | / \ $$ |$$ |  $$ |$$$$$$$$/ $$$$$$$  |$$$$$$$$/ 
 $$ |/$  \$$ |  $$ |     $$ |   $$ |__$$ |      $$$  \$$ |$$ |  $$ |$$ |/$  \$$ |$$ |__$$ |$$ |__    $$ |__$$ |$$ |__    
@@ -159,60 +158,60 @@ $$/      $$/ $$$$$$/    $$/    $$/   $$/       $$/   $$/  $$$$$$/  $$/      $$/ 
 )
 
 func chorusBig1() {
-	time.Sleep(time.Millisecond * 210)
-	fmt.Printf("%v", system1)
-	time.Sleep(time.Millisecond * 839)
+	noteRest(eightnote)
+	fmt.Print(system1)
+	noteRest(halfnote)
 	cleanDisplay()
-	fmt.Printf("%v", wants1)
-	time.Sleep(time.Millisecond * 210)
-	fmt.Printf("%v", to1)
-	time.Sleep(time.Millisecond * 210)
+	fmt.Print(wants1)
+	noteRest(eightnote)
+	fmt.Print(to1)
+	noteRest(eightnote)
 	cleanDisplay()
-	fmt.Printf("%v", keep1)
-	time.Sleep(time.Millisecond * 210)
-	fmt.Printf("%v", you1)
-	time.Sleep(time.Millisecond * 420)
-	fmt.Printf("%v", low1)
-	time.Sleep(time.Millisecond * 420)
+	fmt.Print(keep1)
+	noteRest(eightnote)
+	fmt.Print(you1)
+	noteRest(quaternote)
+	fmt.Print(low1)
+	noteRest(quaternote)
 	cleanDisplay()
-	fmt.Printf("%v", its1)
-	time.Sleep(time.Millisecond * 210)
-	fmt.Printf("%v", gonna1)
-	time.Sleep(time.Millisecond * 420)
+	fmt.Print(its1)
+	noteRest(eightnote)
+	fmt.Print(gonna1)
+	noteRest(quaternote)
 	cleanDisplay()
-	fmt.Printf("%v", leave1)
-	time.Sleep(time.Millisecond * 420)
+	fmt.Print(leave1)
+	noteRest(quaternote)
 	cleanDisplay()
-	fmt.Printf("%v", leaveyou1)
-	time.Sleep(time.Millisecond * 420)
+	fmt.Print(leaveyou1)
+	noteRest(quaternote)
 	cleanDisplay()
-	fmt.Printf("%v", leaveyouwith1)
-	time.Sleep(time.Millisecond * 420)
+	fmt.Print(leaveyouwith1)
+	noteRest(quaternote)
 	cleanDisplay()
-	fmt.Printf("%v", leaveyouwithnowhere1)
-	time.Sleep(time.Millisecond * 839)
+	fmt.Print(leaveyouwithnowhere1)
+	noteRest(halfnote)
 	cleanDisplay()
-	fmt.Printf("%v", togo1)
-	time.Sleep(time.Millisecond * 1259)
+	fmt.Print(togo1)
+	noteRest(halfnote + quaternote)
 	cleanDisplay()
-	noteRest(8)
+	noteRest(eightnote)
 }
 
 func chorusSmall1() {
-	time.Sleep(time.Millisecond * 210)
-	fmt.Printf("%v", system1)
-	time.Sleep(time.Millisecond * 839)
+	noteRest(eightnote)
+	fmt.Print(system1)
+	noteRest(halfnote)
 	cleanDisplay()
-	fmt.Printf("%v", wants1)
-	time.Sleep(time.Millisecond * 210)
-	fmt.Printf("%v", to1)
-	time.Sleep(time.Millisecond * 210)
+	fmt.Print(wants1)
+	noteRest(eightnote)
+	fmt.Print(to1)
+	noteRest(eightnote)
 	cleanDisplay()
-	fmt.Printf("%v", keep1)
-	time.Sleep(time.Millisecond * 210)
-	fmt.Printf("%v", you1)
-	time.Sleep(time.Millisecond * 420)
-	fmt.Printf("%v", low1)
-	time.Sleep(time.Millisecond * 420)
+	fmt.Print(keep1)
+	noteRest(eightnote)
+	fmt.Print(you1)
+	noteRest(quaternote)
+	fmt.Print(low1)
+	noteRest(quaternote)
 	cleanDisplay()
 }

@@ -2,6 +2,11 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"os"
+	"os/exec"
+	"strconv"
+	"strings"
 	"time"
 )
 
@@ -20,7 +25,7 @@ type Sized struct {
 }
 
 func printer(done chan bool) {
-	s := Sized{}
+	s := &Sized{}
 	s.width, s.height = checkTerminalSize()
 	// intro
 	intro()
@@ -112,18 +117,27 @@ func progressBar(length, totalTime int) {
 // sixteenth note - 16 - 105
 // If extended, needs to validate. Good for now.
 func noteRest(note int) {
-	switch note {
-	case 1:
-		time.Sleep(time.Millisecond * 1678)
-	case 2:
-		time.Sleep(time.Millisecond * 839)
-	case 4:
-		time.Sleep(time.Millisecond * 420)
-	case 8:
-		time.Sleep(time.Millisecond * 210)
-	case 16:
-		time.Sleep(time.Millisecond * 105)
-	default:
-		panic("Unknown rest note value")
+	time.Sleep(time.Millisecond * time.Duration(note))
+}
+
+func checkTerminalSize() (int, int) {
+	cmd := exec.Command("stty", "size")
+	cmd.Stdin = os.Stdin
+	out, err := cmd.Output()
+	if err != nil {
+		log.Fatal(err)
+		return 0, 0
 	}
+	valuePairs := strings.Fields(string(out))
+	height, err := strconv.Atoi(valuePairs[0])
+	if err != nil {
+		log.Fatal(err)
+		return 0, 0
+	}
+	width, err := strconv.Atoi(valuePairs[1])
+	if err != nil {
+		log.Fatal(err)
+		return 0, 0
+	}
+	return width, height
 }
