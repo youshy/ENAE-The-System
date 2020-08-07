@@ -1,194 +1,127 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
-
 var (
 	transmission string = "Intercepting transmission\n"
 	downloading  string = "Downloading:\n"
 	message      string = "This solo has been improvised from start to finish. It was take number 2 or so and we liked it so much, that we have banned Artur from redoing it. So, most likely, it will be different each time! For the nerds - that is Artur's heavily modded Fender Jazzmaster USA into Earthquaker Devices Tentacle into GodCityInstruments Baracus into Ampeg V4 into ultra-oversized Zilla 212 with V30 and Neodimium Creamback."
 )
 
-func solo() {
-	printString(transmission, 52)
-	printString(downloading, 52)
-	totalTime := 2518 - 52 - 52
+func (s *Sized) solo() {
+	printInMicroseconds(transmission, halfnote)
+	printInMicroseconds(downloading, quaternote)
+	totalTime := halfnote + fullnote
 	progressBar(100, totalTime)
 	cleanDisplay()
-	guitarSolo()
+	s.guitarSolo()
 }
 
-func progressBar(length, totalTime int) {
-	timePerChar := totalTime / (length + 2) // we need to wrap [ ]
-	fmt.Printf("[")
-	for i := 0; i < length; i++ {
-		fmt.Printf("|")
-		time.Sleep(time.Millisecond * time.Duration(timePerChar))
-	}
-	fmt.Printf("]")
-}
-
-func guitarSolo() {
+func (s *Sized) guitarSolo() {
 	// 1st bar
-	printNoteInBinary("D", 1678)
-	printNoteInBinary("F", 1678)
-	printNoteInBinary("G", 839)
-	printNoteInBinary("A", 839)
-	printNoteInBinary("C", 1678)
+	s.printNoteInBinary("D", fullnote)
+	s.printNoteInBinary("F", fullnote)
+	s.printNoteInBinary("G", halfnote)
+	s.printNoteInBinary("A", halfnote)
+	s.printNoteInBinary("C", fullnote)
 	cleanDisplay()
 	// 2nd bar
-	noteRest(8)
-	printNoteInBinary("A", 105)
-	printNoteInBinary("C", 105)
-	printNoteInBinary("D", 210)
-	printNoteInBinary("G", 420)
-	printNoteInBinary("E", 210)
-	printNoteInBinary("E", 210)
-	printNoteInBinary("F", 420)
-	printNoteInBinary("F#", 210)
-	printNoteInBinary("F", 210)
-	printNoteInBinary("E", 210)
-	printNoteInBinary("F", 420)
-	printNoteInBinary("E", 210)
-	printNoteInBinary("D", 420)
-	printNoteInBinary("F", 210)
-	printNoteInBinary("E", 210)
-	printNoteInBinary("C", 630)
-	printNoteInBinary("E", 210)
-	printNoteInBinary("A", 1890)
+	noteRest(eightnote)
+	s.printNoteInBinary("A", sixteenthnote)
+	s.printNoteInBinary("C", sixteenthnote)
+	s.printNoteInBinary("D", eightnote)
+	s.printNoteInBinary("G", quaternote)
+	s.printNoteInBinary("E", eightnote)
+	s.printNoteInBinary("E", eightnote)
+	s.printNoteInBinary("F", quaternote)
+	s.printNoteInBinary("F#", eightnote)
+	s.printNoteInBinary("F", eightnote)
+	s.printNoteInBinary("E", eightnote)
+	s.printNoteInBinary("F", quaternote)
+	s.printNoteInBinary("E", eightnote)
+	s.printNoteInBinary("D", quaternote)
+	s.printNoteInBinary("F", eightnote)
+	s.printNoteInBinary("E", eightnote)
+	s.printNoteInBinary("C", quaternote+eightnote)
+	s.printNoteInBinary("E", eightnote)
+	s.printNoteInBinary("A", fullnote+eightnote)
 	cleanDisplay()
 	// 3rd bar
-	noteRest(8)
-	printNoteInBinary("C", 105)
-	printNoteInBinary("D", 105)
-	printNoteInBinary("A", 105)
-	noteRest(16)
-	printNoteInBinary("?", 210)
-	printNoteInBinary("?", 210)
-	printNoteInBinary("?", 210)
-	noteRest(4)
+	noteRest(eightnote)
+	s.printNoteInBinary("C", sixteenthnote)
+	s.printNoteInBinary("D", sixteenthnote)
+	s.printNoteInBinary("A", sixteenthnote)
+	noteRest(sixteenthnote)
+	s.printNoteInBinary("?", eightnote)
+	s.printNoteInBinary("?", eightnote)
+	s.printNoteInBinary("?", eightnote)
+	noteRest(quaternote)
 
-	noteRest(8)
-	printNoteInBinary("C", 105)
-	printNoteInBinary("E", 105)
-	noteRest(16)
-	noteRest(16)
-	printNoteInBinary("?", 210)
-	printNoteInBinary("?", 210)
-	printNoteInBinary("?", 210)
-	noteRest(4)
+	noteRest(eightnote)
+	s.printNoteInBinary("C", sixteenthnote)
+	s.printNoteInBinary("E", sixteenthnote)
+	noteRest(sixteenthnote)
+	noteRest(sixteenthnote)
+	s.printNoteInBinary("?", eightnote)
+	s.printNoteInBinary("?", eightnote)
+	s.printNoteInBinary("?", eightnote)
+	noteRest(quaternote)
 
-	noteRest(8)
-	printNoteInBinary("C", 105)
-	printNoteInBinary("D", 105)
-	printNoteInBinary("A", 105)
-	noteRest(16)
-	printNoteInBinary("?", 210)
-	printNoteInBinary("?", 210)
-	printNoteInBinary("?", 210)
-	noteRest(4)
+	noteRest(eightnote)
+	s.printNoteInBinary("C", sixteenthnote)
+	s.printNoteInBinary("D", sixteenthnote)
+	s.printNoteInBinary("A", sixteenthnote)
+	noteRest(sixteenthnote)
+	s.printNoteInBinary("?", eightnote)
+	s.printNoteInBinary("?", eightnote)
+	s.printNoteInBinary("?", eightnote)
+	noteRest(quaternote)
 
-	noteRest(8)
-	printNoteInBinary("A", 210)
-	printNoteInBinary("G", 210)
-	printNoteInBinary("E", 105)
-	printNoteInBinary("G", 105)
-	printNoteInBinary("E", 105)
-	printNoteInBinary("D", 105)
-	printNoteInBinary("E", 210)
-	noteRest(4)
+	noteRest(eightnote)
+	s.printNoteInBinary("A", eightnote)
+	s.printNoteInBinary("G", eightnote)
+	s.printNoteInBinary("E", sixteenthnote)
+	s.printNoteInBinary("G", sixteenthnote)
+	s.printNoteInBinary("E", sixteenthnote)
+	s.printNoteInBinary("D", sixteenthnote)
+	s.printNoteInBinary("E", eightnote)
+	noteRest(quaternote)
 	cleanDisplay()
 	// 4th bar
-	printNoteInBinary("F", 105)
-	printNoteInBinary("D", 105)
-	printNoteInBinary("C", 105)
-	printNoteInBinary("F", 105)
-	printNoteInBinary("C", 105)
-	printNoteInBinary("A", 105)
-	printNoteInBinary("C", 105)
-	printNoteInBinary("A", 105)
-	printNoteInBinary("G#", 105)
-	printNoteInBinary("A", 105)
-	printNoteInBinary("G#", 105)
-	printNoteInBinary("G", 105)
-	printNoteInBinary("G#", 105)
-	printNoteInBinary("G", 105)
-	printNoteInBinary("F", 105)
-	printNoteInBinary("G", 105)
+	s.printNoteInBinary("F", sixteenthnote)
+	s.printNoteInBinary("D", sixteenthnote)
+	s.printNoteInBinary("C", sixteenthnote)
+	s.printNoteInBinary("F", sixteenthnote)
+	s.printNoteInBinary("C", sixteenthnote)
+	s.printNoteInBinary("A", sixteenthnote)
+	s.printNoteInBinary("C", sixteenthnote)
+	s.printNoteInBinary("A", sixteenthnote)
+	s.printNoteInBinary("G#", sixteenthnote)
+	s.printNoteInBinary("A", sixteenthnote)
+	s.printNoteInBinary("G#", sixteenthnote)
+	s.printNoteInBinary("G", sixteenthnote)
+	s.printNoteInBinary("G#", sixteenthnote)
+	s.printNoteInBinary("G", sixteenthnote)
+	s.printNoteInBinary("F", sixteenthnote)
+	s.printNoteInBinary("G", sixteenthnote)
 
-	printNoteInBinary("F", 105)
-	printNoteInBinary("D", 105)
-	printNoteInBinary("F", 105)
-	printNoteInBinary("D", 105)
-	printNoteInBinary("C", 105)
-	printNoteInBinary("D", 105)
-	printNoteInBinary("C", 105)
-	printNoteInBinary("A", 105)
-	printNoteInBinary("G#", 105)
-	printNoteInBinary("G", 105)
-	printNoteInBinary("F", 105)
-	printNoteInBinary("D", 105)
-	printNoteInBinary("C", 105)
-	printNoteInBinary("D", 105)
-	printNoteInBinary("F", 105)
-	printNoteInBinary("G", 105)
+	s.printNoteInBinary("F", sixteenthnote)
+	s.printNoteInBinary("D", sixteenthnote)
+	s.printNoteInBinary("F", sixteenthnote)
+	s.printNoteInBinary("D", sixteenthnote)
+	s.printNoteInBinary("C", sixteenthnote)
+	s.printNoteInBinary("D", sixteenthnote)
+	s.printNoteInBinary("C", sixteenthnote)
+	s.printNoteInBinary("A", sixteenthnote)
+	s.printNoteInBinary("G#", sixteenthnote)
+	s.printNoteInBinary("G", sixteenthnote)
+	s.printNoteInBinary("F", sixteenthnote)
+	s.printNoteInBinary("D", sixteenthnote)
+	s.printNoteInBinary("C", sixteenthnote)
+	s.printNoteInBinary("D", sixteenthnote)
+	s.printNoteInBinary("F", sixteenthnote)
+	s.printNoteInBinary("G", sixteenthnote)
 	cleanDisplay()
-	printInMicroseconds(message, 1678)
-	noteRest(2)
-	noteRest(4)
+	printBinaryInMicroseconds(message, fullnote)
+	noteRest(halfnote)
+	noteRest(quaternote)
 	cleanDisplay()
-}
-
-// As it goes by divisions
-// full note - 1 - 1678
-// half note - 2 - 839
-// quater note - 4 - 420
-// eight note - 8 - 210
-// sixteenth note - 16 - 105
-// If extended, needs to validate. Good for now.
-func noteRest(note int) {
-	switch note {
-	case 1:
-		time.Sleep(time.Millisecond * 1678)
-	case 2:
-		time.Sleep(time.Millisecond * 839)
-	case 4:
-		time.Sleep(time.Millisecond * 420)
-	case 8:
-		time.Sleep(time.Millisecond * 210)
-	case 16:
-		time.Sleep(time.Millisecond * 105)
-	default:
-		panic("Unknown rest note value")
-	}
-
-}
-
-func printNoteInBinary(note string, speed int) {
-	var toBinary string
-	for _, c := range note {
-		toBinary += fmt.Sprintf("%b ", c)
-	}
-	freq := (float64(speed) / float64(len(toBinary))) // to microseconds
-	for _, b := range toBinary {
-		fmt.Printf("%c", b)
-		time.Sleep(time.Millisecond * time.Duration(freq))
-	}
-	fmt.Println()
-}
-
-func printInMicroseconds(s string, spd int) {
-	speed := spd * 1000
-	var toBinary string
-	for _, c := range s {
-		toBinary += fmt.Sprintf("%b ", c)
-	}
-	freq := (float64(speed) / float64(len(toBinary))) // to microseconds
-	for _, b := range toBinary {
-		fmt.Printf("%c", b)
-		time.Sleep(time.Microsecond * time.Duration(freq))
-	}
-	fmt.Println()
 }

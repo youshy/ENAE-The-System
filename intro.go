@@ -1,26 +1,29 @@
 package main
 
-import "time"
-
 var (
 	// welcome screen
 	intro1 string = "Everybody Needs an Enemy\n"
-	intro2 string = "System version: v1.0\n"
+	intro2 string = "Low\n"
 	intro3 string = "Build version: v1.0\n"
-	intro4 string = "Truth: UNKNOWN\n"
+	intro4 string = "Written, Produced, Mixed, Mastered by Everybody Needs An Enemy\n"
+	intro5 string = "Music Video programmed by Artur Kondas\n"
 )
 
 func intro() {
 	cleanDisplay()
-	printString(intro1, 33)
-	time.Sleep(time.Millisecond*839 + 14)
-	printString(intro2, 39)
-	time.Sleep(time.Millisecond*839 + 20)
-	printString(intro3, 41)
-	time.Sleep(time.Millisecond*839 + 19)
-	printString(intro4, 55)
-	time.Sleep(time.Millisecond*839 + 14)
+	printInMicroseconds(intro1, halfnote)
+	noteRest(halfnote)
+	printInMicroseconds(intro2, halfnote)
+	noteRest(halfnote)
+	printInMicroseconds(intro3, halfnote)
+	noteRest(halfnote)
+	printInMicroseconds(intro4, halfnote)
+	noteRest(halfnote)
 	cleanDisplay()
-	time.Sleep(time.Millisecond * 3357)
-	time.Sleep(time.Millisecond * 3357)
+	printInMicroseconds(intro5, halfnote)
+	noteRest(halfnote)
+	cleanDisplay()
+	noteRest(fullnote)
+	noteRest(fullnote)
+	noteRest(fullnote)
 }
