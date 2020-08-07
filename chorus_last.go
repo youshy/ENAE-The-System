@@ -82,9 +82,7 @@ func (s *Sized) lastChorus() {
 	var (
 		iter int
 	)
-	for j := 0; j < s.height; j++ {
-		fmt.Println(s.generateLine(":"))
-	}
+	noteRest(eightnote)
 	moveCursor(maxHeight, 0)
 	for i := 0; i < len(banners); i++ {
 		moveCursor(maxHeight+iter, 0)
