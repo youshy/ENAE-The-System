@@ -3,7 +3,7 @@ package main
 var (
 	// welcome screen
 	intro1 string = "Everybody Needs an Enemy\n"
-	intro2 string = "Low\n"
+	intro2 string = "The System\n"
 	intro3 string = "Build version: v1.0\n"
 	intro4 string = "Written, Produced, Mixed, Mastered by Everybody Needs An Enemy\n"
 	intro5 string = "Music Video programmed by Artur Kondas\n"

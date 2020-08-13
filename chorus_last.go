@@ -97,11 +97,12 @@ func (s *Sized) lastChorus() {
 		noteRest(thirtysecondnote)
 		iter++
 	}
-	noteRest(halfnote)
+	noteRest(fullnote)
 
-	// take random banner string
+	rest := 5
+	maxMilliseconds := int(math.RoundToEven(float64(12*fullnote) / float64(rest)))
+
 	source := rand.NewSource(time.Now().UnixNano())
-	maxMilliseconds := 16 * fullnote
 	for j := 0; j < maxMilliseconds; j++ {
 		randban := rand.New(source).Intn(len(banners))
 		banner := banners[randban]
@@ -130,9 +131,9 @@ func (s *Sized) lastChorus() {
 			fmt.Println(s.formatLine(changedBanner))
 			banners[randban] = changedBanner
 		}
-		noteRest(3)
+		noteRest(rest)
 	}
-
+	cleanDisplay()
 }
 
 func (s *Sized) printCenter(str string) {
