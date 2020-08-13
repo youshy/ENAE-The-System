@@ -101,13 +101,6 @@ func centerText(s string, w int) string {
 	return fmt.Sprintf("%[1]*s", -w, fmt.Sprintf("%[1]*s", (w+len(s))/2, s))
 }
 
-// As it goes by divisions
-// full note - 1 - 1678
-// half note - 2 - 839
-// quater note - 4 - 420
-// eight note - 8 - 210
-// sixteenth note - 16 - 105
-// If extended, needs to validate. Good for now.
 func noteRest(note int) {
 	time.Sleep(time.Millisecond * time.Duration(note))
 }

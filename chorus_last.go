@@ -3,11 +3,12 @@ package main
 import (
 	"fmt"
 	"math"
+	"math/rand"
 	"strings"
+	"time"
 )
 
 // There is an extra quaternote from the solo section here!
-
 var banners = map[int]string{
 	0:  "::######::::::###:::::##::: ##::####::########:::::########::########::########::##:::::::",
 	1:  ":##... ##::::## ##::: ###:: ##: ####:... ##..::::: ##.....:: ##.....:: ##.....:: ##:::::::",
@@ -54,6 +55,7 @@ func (s *Sized) formatLine(str string) string {
 	if len(f) != s.width {
 		f = f[:len(f)-1]
 	}
+
 	return f
 }
 
@@ -95,7 +97,42 @@ func (s *Sized) lastChorus() {
 		noteRest(thirtysecondnote)
 		iter++
 	}
-	noteRest(eightnote)
+	noteRest(halfnote)
+
+	// take random banner string
+	source := rand.NewSource(time.Now().UnixNano())
+	maxMilliseconds := 16 * fullnote
+	for j := 0; j < maxMilliseconds; j++ {
+		randban := rand.New(source).Intn(len(banners))
+		banner := banners[randban]
+		switch randban {
+		case 8, 9, 10, 11, 12, 13, 14, 15:
+			// want to get "your"
+			mid := len(banner) / 2
+			randpos := rand.New(source).Intn(mid) + mid + 1
+			changedBanner := banner[:randpos-1] + ":" + banner[randpos:]
+			moveCursor(maxHeight+randban, 0)
+			fmt.Println(s.formatLine(changedBanner))
+			banners[randban] = changedBanner
+		case 24, 25, 26, 27, 28, 29, 30, 31:
+			// we're leaving the "face" out, thus middle of the banner
+			mid := len(banner) / 2
+			randpos := rand.New(source).Intn(mid) + 1
+			changedBanner := banner[:randpos-1] + ":" + banner[randpos:]
+			moveCursor(maxHeight+randban, 0)
+			fmt.Println(s.formatLine(changedBanner))
+			banners[randban] = changedBanner
+		default:
+			// we don't want 0 here
+			randpos := rand.New(source).Intn(len(banner)-1) + 1
+			changedBanner := banner[:randpos-1] + ":" + banner[randpos:]
+			moveCursor(maxHeight+randban, 0)
+			fmt.Println(s.formatLine(changedBanner))
+			banners[randban] = changedBanner
+		}
+		noteRest(3)
+	}
+
 }
 
 func (s *Sized) printCenter(str string) {
