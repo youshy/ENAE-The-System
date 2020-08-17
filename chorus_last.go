@@ -100,7 +100,7 @@ func (s *Sized) lastChorus() {
 	noteRest(fullnote)
 
 	rest := 5
-	maxMilliseconds := int(math.RoundToEven(float64(12*fullnote) / float64(rest)))
+	maxMilliseconds := int(math.RoundToEven(float64(16*fullnote) / float64(rest)))
 
 	source := rand.NewSource(time.Now().UnixNano())
 	for j := 0; j < maxMilliseconds; j++ {
@@ -133,7 +133,6 @@ func (s *Sized) lastChorus() {
 		}
 		noteRest(rest)
 	}
-	cleanDisplay()
 }
 
 func (s *Sized) printCenter(str string) {
