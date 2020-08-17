@@ -1,3 +1,9 @@
-# Everybody Needs an Enemy - Low
+# ENAE - The System
 
-This repo holds a music video for my band's **Everybody Needs an Enemy** new single, **Low**.
+AKA - Nerdy Music Video.
+
+## Why?
+
+## How can I run it?
+
+## Can I break it?
