@@ -12,7 +12,7 @@ import (
 
 func play(done chan bool) {
 	// Prepare the song to play
-	f, err := os.Open("./bounce-test.mp3")
+	f, err := os.Open("./enae-the_system.mp3")
 	if err != nil {
 		log.Fatal(err)
 	}
