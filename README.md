@@ -2,7 +2,7 @@
 
 AKA - Nerdy Music Video.
 
-Watch our version on [youtube](https://www.youtube.com/watch?v=-_-2EpUqb9g). Read more on [my blog](https://akondas.com/blog/How-To-Write-A-Music-Video-In-Go)
+Watch our version on [youtube](https://www.youtube.com/watch?v=-_-2EpUqb9g). Read more on [my blog](https://akondas.com/blog/How-To-Write-A-Music-Video-In-Go).
 
 ## Why?
 
