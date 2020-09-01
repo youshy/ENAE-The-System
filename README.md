@@ -20,7 +20,7 @@ Then it's easy peasy - clone this repo and `go run .`!
 
 ## Can I break it?
 
-Please do! As it's an experience, the crucial bit is that you can make it your own! You can read more about it on my [blog](https://akondas.com) (post is still yet to come, but it'll be there!)
+Please do! As it's an experience, the crucial bit is that you can make it your own! You can read more about it on my [blog](https://akondas.com/blog/How-To-Write-A-Music-Video-In-Go)
 
 ## How can I break it?
 
